@@ -69,9 +69,27 @@ $.ajax({
 if(info.success){
     location.href='index.html'
 }
+if(info.error===1000){
+    $('#form').data('bootstrapValidator').updateStatus("username", "INVALID", "callback");
+}
+if ( info.error === 1001 ) {
+    // alert( "密码错误" );
+    // updateStatus
+    // 参数1: 字段名称
+    // 参数2: 校验状态
+    // 参数3: 校验规则, 可以设置提示文本
+    $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback")
+  }      
 
-        
+
     }
-})
+});
+// 3. 重置功能实现
+$('[type="reset"]').click(function() {
+    console.log( 1111 );
+    // 除了重置文本, 还要重置校验状态
+    $('#form').data("bootstrapValidator").resetForm();
+  });
 
 });
+
