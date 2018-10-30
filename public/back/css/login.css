@@ -1,0 +1,18 @@
+
+html,body{
+height: 100%;
+width: 100%;
+    
+}
+.box{
+    height: 100%;
+    background-color: rgb(56, 24, 24);
+}
+.panel-body{
+    height: 50px;
+  
+    text-align: center;
+}
+.panel{
+    margin-top:200px;
+}
