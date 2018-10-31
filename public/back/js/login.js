@@ -1,4 +1,19 @@
-   //使用表单校验插件
+$(document).ajaxStart(function() {
+  // 第一个 ajax 开始发送时调用, 开启进度条
+  NProgress.start();
+});
+
+
+$(document).ajaxStop(function() {
+  // 在所有的 ajax 请求完成时调用
+  // 模拟网络环境, 添加延迟
+  setTimeout(function() {
+    NProgress.done();
+  }, 500 );
+});
+  
+  
+  //使用表单校验插件
     $("#form").bootstrapValidator({
     
         //2. 指定校验时的图标显示，默认是bootstrap风格
@@ -92,3 +107,7 @@ $('[type="reset"]').on('click',function(){
   $("form").data("bootstrapValidator").resetForm(true);
 })
 
+
+;(function(){
+  $('[type="submit"]')
+})();

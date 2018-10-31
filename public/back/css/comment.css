@@ -1,0 +1,101 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.aside{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background-color: #222D32;
+    transition:all .8s;
+}
+.aside.hidemenu{
+    left: -180px;
+}
+.aside .top p{
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    background-color: #367FA9;
+}
+.aside .super img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 6px;
+
+}
+.aside .super p{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+
+}
+.aside ul{
+    list-style: none;
+   padding-top: 20px;
+
+}
+.active{
+    background-color: #1D1F21;
+    border-left: 3px solid  rgb(111, 38, 51);
+}
+.aside ul li{
+
+    border-left: 3px solid rgb(11, 38, 51) ;
+}
+.aside ul li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+color: white;
+text-decoration:none;
+}
+.aside ul li a i{
+    margin-left: -20px;
+    margin-right: 5px;
+}
+.aside .fen_lt a{
+    margin-left: 60px;
+    text-align: left;
+}
+.aside .erji{
+    display: none;
+}
+
+
+
+
+/* 内容部分 */
+.content{
+    width: 100%;
+    height: 100%;
+    padding-left: 180px;
+    transition:all .8s;
+}
+.content.hidemenu{
+    padding-left: 0px;
+}
+
+.content p{
+    background-color: #3C8DBC;
+    height: 50px;
+    line-height: 50;
+}
+
+.content p a{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color:white;
+}
