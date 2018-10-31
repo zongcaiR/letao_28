@@ -42,14 +42,14 @@ html,body{
    padding-top: 20px;
 
 }
-.active{
-    background-color: #1D1F21;
-    border-left: 3px solid  rgb(111, 38, 51);
-}
 .aside ul li{
-
-    border-left: 3px solid rgb(11, 38, 51) ;
+    
+    border-left: 3px solid  transparent ;
 }
+.aside ul li.active{
+     background-color: #1D1F21;
+     border-left: 3px solid  rgb(48, 93, 161);
+ }
 .aside ul li a{
     display: block;
     height: 40px;
@@ -70,7 +70,10 @@ text-decoration:none;
 .aside .erji{
     display: none;
 }
-
+.aside ul li:hover{
+    background-color: rgb(44, 52, 59);
+    border-left: 3px solid  rgb(18, 28, 43);
+}
 
 
 
@@ -99,3 +102,19 @@ text-decoration:none;
     font-size: 18px;
     color:white;
 }
+
+ .modal-body p{
+color:red;
+}
+
+.content .content_header{
+    padding: 10px;
+}
+.content .content_header .breadcrumb li a{
+text-decoration: none;
+ }
+
+
+
+
+

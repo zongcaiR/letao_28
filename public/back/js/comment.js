@@ -19,13 +19,46 @@ $(function(){
         
     });
 //点击侧边栏效果
-$('.pull-left').on('click',function(){
+$('.qiehuan').on('click',function(){
    $(".aside").toggleClass('hidemenu')
    $(".content").toggleClass('hidemenu')
 
 })
 
+$('.pull-right').on('click',function(){
+    $('#myModal').modal(options)
+})
 
+//点击退出 跳转到登录页；
+$('#loginBut').on('click',function(){
+    $.ajax({
+        type:'get',
+        url:'/employee/employeeLogout',
+        dataType:'json',
+        success:function(info){
+            if(info.success){
+                location.href="login.html "
+            }
+            
+        }
+    })
+})
+
+
+//用户界面判断是否登录过做判断
+// /拦截功能
+$.ajax({
+    type:'get',
+    url:'/employee/checkRootLogin',
+    dataType:'json',
+    success:function(info){
+        // console.log(info);
+        if(info.error===400){
+            location.href="login.html"
+        }
+        
+    }
+})
 
 
 
