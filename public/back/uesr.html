@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-    
+    <link rel="stylesheet" href="./css/echarts.css">
 </head>
 <body>
  <!-- 后台管理布局 -->
@@ -25,7 +25,7 @@
 </div>
 
 <ul>
-    <li class="active"><a href="index.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+    <li class=""><a href="index.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
     <li class="fen"><a href="#"><i class="glyphicon glyphicon-list"></i>分类管理</a></li>
     <li class="fen_lt erji"><a href="first.html">一级分类</a></li>
     <li class="fen_lt erji"><a href="secend.html">二级分类 </a></li>
@@ -48,12 +48,16 @@
     <div class="content_header">
             <ol class="breadcrumb">
                     <li><a href="#">管理系统</a></li>
-                    <li><a href="#">用户管理</a></li>
-                    <!-- <li class="active">首页</li> -->
+                    <!-- <li><a href="#">商品管理</a></li> -->
+                    <li class="active">首页</li>
             </ol>
     </div>
 
+<div class="content_content">
 
+<div class="echart echart-l pull-left"></div>
+<div class="echart echart-r pull-right"></div>
+</div>
 
 
 </div>
@@ -83,8 +87,8 @@
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
-
-
+<script src="./lib/echarts/echarts.min.js"></script>
+<script src="./js/echarts.js"></script>
 <script src="./js/comment.js"></script>
 </body>
 </html>
