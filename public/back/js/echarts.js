@@ -1,5 +1,5 @@
 //// 基于准备好的dom，初始化echarts实例
-var myChart = echarts.init(document.querySelector('.echart-l'));
+var myChart = echarts.init(document.querySelector('.echart_l'));
 
 // 指定图表的配置项和数据
 var option = {
@@ -23,7 +23,7 @@ var option = {
 // 使用刚指定的配置项和数据显示图表。
 myChart.setOption(option);
 
-var myChartr = echarts.init(document.querySelector('.echart-r'));
+var myChartr = echarts.init(document.querySelector('.echart_r'));
 var optionr = {
     title : {
         text: '某站点用户访问来源',

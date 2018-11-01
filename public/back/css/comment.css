@@ -98,14 +98,16 @@ text-decoration:none;
 .content.hidemenu{
     padding-left: 0px;
 }
-
-.content p{
+.content .content_top{
+    height: 50px;
+}
+.content .content_top p{
     background-color: #3C8DBC;
     height: 50px;
-    line-height: 50;
+    line-height: 50px;
 }
 
-.content p a{
+.content .content_top p a{
     width: 50px;
     height: 50px;
     text-align: center;
@@ -126,6 +128,8 @@ text-decoration: none;
  }
 
 
-
+.content .lrpadding{
+   margin: 0 10px;
+}
 
 
