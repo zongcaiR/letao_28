@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./lib/bootstrap-paginator/bootstrap-paginator.min.js">
+    
 </head>
 <body>
  <!-- 后台管理布局 -->
@@ -27,7 +29,7 @@
     <li ><a href="user.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
     <li class="fen"><a href="#"><i class="glyphicon glyphicon-list"></i>分类管理</a></li>
     <li  class="fen_lt erji  " style="display: block" ><a href="first.html">一级分类</a></li>
-    <li  class="fen_lt erji active       " style="display: block"          ><a href="secend.html">二级分类a a a </a></li>
+    <li  class="fen_lt erji active       " style="display: block"          ><a href="secend.html">二级分类</a></li>
     <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i>商品管理</a></li>
 </ul>
 
@@ -54,9 +56,119 @@
                     <li><a href="#">二级分类</a></li>
                     
             </ol>
+            <button class="btn btn-default add_B">添加分类</button>
     </div>
+
+<div class="lrpadding">
+    <table class="table table-bordered">
+       <thead>			
+            			
+            <tr>
+                    <th>序号</th>
+                    <th>一级分类名称</th>
+                    <th>二级分类名称</th>
+                    <th>二级分类LOGO</th>
+                </tr>
+       </thead>
+       <tbody>
+         <!-- 挖坑 -->
+       </tbody>
+
+       <!-- 分页插件 -->
+    </table>
+           <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
+    
 </div>
 
+
+
+
+
+
+
+</div>
+
+
+<!-- 模板引擎 -->
+<script type="text/html" id="secendTmp">
+{{each rows v i}}
+<tr>
+        <td>{{(i+1)+(page-1)*size}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img height="50px" src="{{v.brandLogo}}" alt=""></td>
+    </tr>
+{{/each}}
+</script>
+
+
+<!-- ul li的模板 -->
+<script type="text/html" id="dropdownTpl">
+    {{ each rows v i }}
+      <li><a data-id="{{ v.id }}" href="#">{{ v.categoryName }}</a></li>
+    {{ /each }}
+  </script>
+
+
+
+
+<!-- 添加时的模态框 -->
+<div class="modal fade" id="secendModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <form id="form">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                            <h4 class="modal-title">添加分类</h4>
+                          </div>
+                          <div class="modal-body">
+                               
+                          <div class="form-group">
+                               <div class="dropdown">
+                                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
+                                              <span id="dropdownText">请选择一级分类</span>
+                                         <span class="caret"></span>
+                                       </button>
+                                       <ul class="dropdown-menu" >
+                                       <!-- 挖 坑 -->
+                                      </ul>
+                                      <!-- 一级分类 id -->
+                                       <input type="hidden" name="categoryId">
+                                       <input type="hidden" name="hot" value="1">
+                              </div>
+              
+              <br>
+                             <div class="form-group">
+              
+                                  <input type="text"c class="form-control" placeholder="请输入二级分类">
+                              </div>
+                                 
+              
+              
+                              <div class="form-group">
+                                  <label for="fileupload" class="btn btn-default">上传图片</label>
+                                 <input type="file" id="fileupload"  name="pic1" data-url="/category/addSecondCategoryPic"  style="display: none">
+                              </div>
+                          
+                              <div class="form-group" id="imgBox">
+                                      <img src="./images/none.png" alt="">
+                                      <input type="hidden"  name="brandLogo">
+                                    </div>
+                          
+                          
+                          </div>
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary " id="addBtn">添加</button>
+                          </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div>
+</div>
 
 <!-- 模态框 -->
 <div class="modal fade" id="myModal">
@@ -81,7 +193,13 @@
 
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./js/comment.js"></script>
+<script src="./js/secend.js"></script>
 </body>
 </html>

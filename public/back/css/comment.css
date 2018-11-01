@@ -132,4 +132,17 @@ text-decoration: none;
    margin: 0 10px;
 }
 
+#secendTmp img{
+height: 50px;
+}
+.lrpadding tbody img{
+    width:auto;
+    margin: 0 auto;
+    display: inline-block;
+}
 
+/* 分类二 */
+#imgBox img{
+width: 100px;
+height: 100px;
+}
