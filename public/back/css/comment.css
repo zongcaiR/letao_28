@@ -132,17 +132,21 @@ text-decoration: none;
    margin: 0 10px;
 }
 
-#secendTmp img{
-height: 50px;
-}
-.lrpadding tbody img{
-    width:auto;
-    margin: 0 auto;
-    display: inline-block;
+#imgBox img{
+    height: 100px;
+    width: 100px;
 }
 
+
 /* 分类二 */
-#imgBox img{
-width: 100px;
-height: 100px;
+.lrpadding img{
+width: 50px;
+height: 50px;
+margin: 0 auto;
+}
+.modal-body{
+    padding: 15px;
+}
+.content_body{
+    padding: 10px;
 }

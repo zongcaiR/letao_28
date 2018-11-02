@@ -52,7 +52,7 @@
             <ol class="breadcrumb">
                     <li><a href="#">管理系统</a></li>
                     <li><a href="#">分类管理</a></li>
-                    <li><a href="#">一级分类</a></li>
+                  
                     <li><a href="#">二级分类</a></li>
                     
             </ol>
@@ -72,6 +72,7 @@
        </thead>
        <tbody>
          <!-- 挖坑 -->
+         
        </tbody>
 
        <!-- 分页插件 -->
@@ -83,95 +84,99 @@
 </div>
 
 
-
-
-
-
-
 </div>
 
 
-<!-- 模板引擎 -->
-<script type="text/html" id="secendTmp">
-{{each rows v i}}
+<!-- 模板引擎渲染数据到页面 -->
+<script type="text/html" id="secondTmp">
+{{each rows v i }}
 <tr>
-        <td>{{(i+1)+(page-1)*size}}</td>
-        <td>{{v.categoryName}}</td>
-        <td>{{v.brandName}}</td>
-        <td><img height="50px" src="{{v.brandLogo}}" alt=""></td>
-    </tr>
+  <td>{{i+1+(page-1)*size}}</td>
+  <td>{{v.categoryName}}</td>
+  <td>{{v.brandName}}</td>
+  <td><img src="{{v.brandLogo}}" alt=""></td>
+</tr>
 {{/each}}
 </script>
 
-
-<!-- ul li的模板 -->
+<!-- 二级分类模态 -->
 <script type="text/html" id="dropdownTpl">
-    {{ each rows v i }}
-      <li><a data-id="{{ v.id }}" href="#">{{ v.categoryName }}</a></li>
-    {{ /each }}
-  </script>
+{{each rows v i}}
+<li ><a  data-id="{{v.id}}" href="#">{{v.categoryName}}</a></li>
+                
+{{/each}}
+</script>
 
 
 
 
 <!-- 添加时的模态框 -->
-<div class="modal fade" id="secendModal">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <form id="form">
-                    <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
-                            <h4 class="modal-title">添加分类</h4>
-                          </div>
-                          <div class="modal-body">
-                               
-                          <div class="form-group">
-                               <div class="dropdown">
-                                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
-                                              <span id="dropdownText">请选择一级分类</span>
-                                         <span class="caret"></span>
-                                       </button>
-                                       <ul class="dropdown-menu" >
-                                       <!-- 挖 坑 -->
-                                      </ul>
-                                      <!-- 一级分类 id -->
-                                       <input type="hidden" name="categoryId">
-                                       <input type="hidden" name="hot" value="1">
-                              </div>
-              
-              <br>
-                             <div class="form-group">
-              
-                                  <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
-                              </div>
-                                 
-              
-              
-                              <div class="form-group">
-                                  <label for="fileupload" class="btn btn-default">上传图片</label>
-                                 <input type="file" id="fileupload"  name="pic1" data-url="/category/addSecondCategoryPic"  style="display: none">
-                              </div>
-                          
-                              <div class="form-group" id="imgBox">
-                                      <img src="./images/none.png" alt="">
-                                      <input type="hidden"  name="brandLogo">
-                                    </div>
-                          
-                          
-                          </div>
-                            
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <button type="submit" class="btn btn-primary " id="addBtn">添加</button>
-                          </div>
-            </form>
-          </div><!-- /.modal-content -->
-        </div>
-</div>
+<div class="modal fade" id="secondModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form id="form">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+<!-- bootstrap 要求input外层 套一个 form-group, 
+  做表单校验时, 如果不加 form-group 会报错
+         表单校验外层都需要套 form-group
+          -->
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
+                  <span id="dropdownText">请选择一级分类</span>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" >
+                 <!-- 挖坑 -->
+                </ul>
+              </div>
+              <!-- 一级分类id -->
+              <input type="hidden" name="categoryId">
+               <!-- hot 火热的品牌 火热1, 不火热0 这行代码目前没什么用单后台需要-->
+               <input type="hidden" name="hot" value="1">
+         </div>
+
+
+         <div class="form-group">
+           <input  type="text" name="brandName"  class="form-control" placeholder="请输入二级分类">
+         </div>
+
+     <div class="form-group">
+        <label  class="btn btn-default" for="fileupload">上传图片</label>
+        <!-- name 指定后台用于接收的参数名
+             data-url 后台文件上传的接口地址
+-->
+    <input name="pic1" data-url="/category/addSecondCategoryPic" type="file" id="fileupload" style="display: none">
+      
+     </div>
+
+     <div class="form-group" id="imgBox">
+        <img src="./images/none.png" alt="">
+        <input type="hidden" name="brandLogo">
+      </div>
+
+
+
+    </div>
+
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary " id="addBut">添加</button>
+          </div>
+        </form>
+   </div>
+    </div>
+  </div>
+
 
 <!-- 模态框 -->
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="secondModal">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
