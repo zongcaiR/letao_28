@@ -142,7 +142,6 @@ $('#form').bootstrapValidator({
           }
         }
       }
-
     }
   });
 
@@ -152,7 +151,7 @@ $('#form').on('success.form.bv',function(e){
 
     $.ajax({
         type:'post',
-        url:"/category/addSecondCategory",
+        url:"/category/addSecondCategory", 
         data:$('#form').serialize(),
         dataType:'json',
         success:function(info){
