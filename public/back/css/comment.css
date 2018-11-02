@@ -150,3 +150,8 @@ margin: 0 auto;
 .content_body{
     padding: 10px;
 }
+#productModal img {
+    width: auto;
+    height: 100px;
+    display: inline-block;
+  }
