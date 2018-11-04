@@ -33,7 +33,6 @@ $(function() {
 
   // 通过 一级分类的 id, 进行右侧二级分类的重新渲染
   function renderSecondById( id ) {
-
     // 发送ajax请求
     $.ajax({
       type: "get",

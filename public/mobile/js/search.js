@@ -73,10 +73,8 @@ $(function() {
     var that = this;
 
     mui.confirm("你确定要删除该条记录嘛", "温馨提示", ["取消", "确认"], function( e ) {
-
       if ( e.index === 1 ) {
         // 点击确认按钮
-
         // 获取下标
         var index = $(that).data("index");
         // 获取数组
@@ -84,14 +82,11 @@ $(function() {
         // 根据下标删除某项
         // splice( 从哪开始, 删几个, 添加的项1, 添加的项2, ..... );
         arr.splice( index, 1 );
-
         // 转成 jsonStr 存入本地存储
         var jsonStr = JSON.stringify( arr );
         localStorage.setItem("search_list", jsonStr );
-
         // 重新渲染
         render();
-
       }
 
     })
