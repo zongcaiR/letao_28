@@ -1,0 +1,149 @@
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.aside{
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #222D32;
+    transition:all 0.8s;
+}
+.aside .top p{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color:white;
+   
+    background-color: #367FA9;
+}
+.user{
+    padding-top: 20px;
+}
+.user img{
+    
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 5px auto;
+  
+
+}
+.user p{
+    text-align: center;
+    font-size: 18px;
+    color:white;
+}
+.aside ul{
+    list-style: none;
+    text-align: center;
+}
+.aside ul li{
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+.aside ul li a{
+    display: inline-block;
+    border-left: 3px solid transparent;
+    text-decoration:none;
+    color:white;
+   
+}
+.aside ul li a i{
+    margin-right: 10px;
+    display: inline-block;
+    margin-left: -10px;
+}
+.aside ul .erji{
+    
+    padding-left: 30px;
+}
+.active{
+    border-left: 3px solid #367FA9;
+    background-color: rgb(20, 22, 39);
+}
+.aside ul li:hover{
+    background-color: rgb(70, 67, 67);
+}
+.aside.hidemenu{
+   left: -180px;
+}
+
+
+/* 右边部分 */
+.content{
+    padding-left: 180px;
+    transition:all 0.8s;
+}
+.content.hidemenu{
+    padding-left: 0px;
+}
+.content .top p{
+    height: 50px;
+    width: 100%;
+    background-color: #366FA1;
+}
+.content .top p a{
+    width: 50px;
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    color:white;
+    font-size: 18px;
+
+}
+
+#myModal p{
+    color: red;
+}
+.cont{
+    padding: 10px;
+}
+.fen{
+
+    transition:all 0.8s;
+}
+.yincang{
+    display: none;
+}
+
+/* echerts图 */
+.echerts .tu{
+    width: 45%;
+    height: 400px;
+    background-color: green;
+}
+.back_info{
+    margin: 10px;
+}
+
+
+tbody img{
+   width: auto;
+    height:50px;
+    margin: 0 auto;
+}
+#secondModal #form #BoxImg img{
+    width: 50%;
+    
+display: block;
+}

@@ -30,7 +30,12 @@ $('.pull-right').on('click',function(){
 })
 
 //点击退出 跳转到登录页；
+
+
+
+
 $('#loginBut').on('click',function(){
+    
     $.ajax({
         type:'get',
         url:'/employee/employeeLogout',

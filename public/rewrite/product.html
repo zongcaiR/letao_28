@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理界面</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/comment.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    
+</head>
+<body>
+    <!-- 侧边栏 -->
+ <div class="aside">
+<div class="top">
+        <p>电商管理</p>
+</div>
+
+<div class="user">
+<img src="./images/default.png" alt="">
+<p>超级管理员</p>
+</div>
+<ul>
+    <li><a href="user.html"><i  class="glyphicon glyphicon-user"></i>用户管理</a></li>
+    <li><a class="fen" href="#"><i  class="glyphicon glyphicon-list"></i>分类管理</a></li>
+    <li class="erji yincang"><a  href="first.html">一级分类</a></li>
+    <li class="erji yincang"><a  href="second.html">二级分类</a></li>
+    <li class="active"><a href="product.html"><i  class="glyphicon glyphicon-tags"></i>商品管理</a></li>
+</ul>
+
+
+
+ <!-- 侧边栏 -->
+ </div>
+
+ <div class="content">
+     <div class="top">
+         <p>
+             <a class="pull-left qiehuan" href="#">
+                 <i class="glyphicon glyphicon-align-justify"></i>
+             </a>
+             <a  class="pull-right " href="#">
+         <i class="glyphicon glyphicon-log-out"></i>
+            </a>
+         </p>
+        
+     </div>
+     <div class="cont">
+            <ol class="breadcrumb">
+                    <li><a href="#">管理系统</a></li>
+                    <!-- <li><a href="#">分类管理</a></li> -->
+                    <li><a href="#">商品管理 </a></li>
+                    <!-- <li >首页</li> -->
+        </ol>
+     </div>
+ </div>
+
+
+
+
+
+
+<!-- 退出的模态框 -->
+<div class="modal fade"  id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+              <p> <i class="glyphicon glyphicon-info-sign"></i>  您确定要退出后台管理系统吗？&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btnout">退出</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+
+
+
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+
+<script src="./js/comment.js"></script>
+</body>
+</html>

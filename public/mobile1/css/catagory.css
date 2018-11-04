@@ -1,0 +1,23 @@
+.lt_main{
+    height: 100%;
+}
+.lt_category_left {
+    float: left;
+    width: 90px;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    
+    background-color: rgb(226, 153, 17);
+}
+.lt_category_right{
+   
+    overflow: hidden;
+    position: relative;
+    
+    height: 100%;
+    background-color: rgb(189, 206, 39);
+}
+.BOX{
+    overflow: hidden;
+}

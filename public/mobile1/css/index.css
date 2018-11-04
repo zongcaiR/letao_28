@@ -1,0 +1,54 @@
+ul{
+    list-style: none;
+}
+/* .mui-scroll{
+    height: 100%;
+} */
+.BOX .bottom ul li a.cuttent{
+    color: orange;
+}
+#nav ul{
+    
+    padding: 10px;
+}
+#nav ul li{
+    width: 33.3%;
+    float: left;
+}
+
+
+.canpin{
+    padding: 10px;
+}
+
+.canpin ul{
+    
+    margin-top: 20px;
+}
+.canpin ul li{
+    padding: 10px;
+    float: left;
+    width: 47%;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.canpin ul li:nth-child(2n){
+    margin-left: 15px;
+}
+.canpin ul li img{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+.canpin ul li .baynow{
+    margin: 10px 0;
+}
+.canpin ul li .firstchild{
+    color: red;
+}
+.canpin ul li .lastchild{
+    color: #ccc;
+    text-decoration: line-through;
+}
+
