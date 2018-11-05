@@ -9,25 +9,42 @@
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="./lib/fa/fonts/fontawesome-webfont.ttf">
     <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/searchlist.css">
     <title>乐淘移动练习</title>
 </head>
 <body>
     <div class="BOX">
 <div class="top">   
         <a href="javascript:history.go(-1);" class="icon_left"><i class="mui-icon  mui-icon-back"></i></a>
-        <span >搜索中心</span> 
+        <span >商品列表</span> 
 </div>
-
 <div class="conter">
     <!-- 搜索框 -->
     <div class="search">
            <input type="text" placeholder="请输入要搜索的内容" class="search_input">
-           <button class="mui-btn  mui-btn-primary search_btn">搜索</button>
+           <button class="mui-btn  mui-btn-primary btn_search">搜索</button>
     </div>
+ 
 
-    <!-- 历史记录 -->
-    <div class="history">
-       <!-- //挖个巨坑 -->
+    <!-- 排序模块 -->
+<div class="lt_sort">
+        <a href="#" >上架时间 <i class="fa fa-angle-down"></i></a>
+        <a  href="#" data-type="price">价格 <i class="fa fa-angle-down "></i></a>
+        <a  href="#" data-type="num" >库存 <i class="fa fa-angle-down  "></i></a>
+        <a href="#">折扣 <i class="fa fa-angle-down"></i></a>
+      
+</div>
+
+
+    <!-- //搜索到展现列表部分 -->
+    <div class="canpin">
+
+        <ul class="list_tpl">
+            <!-- 挖个坑 -->
+          
+        </ul>
+
     </div>
 
 
@@ -36,7 +53,6 @@
 
 
 <div class="bottom">
-
   <ul>
           <li><a href="index.html"><i class="fa fa-home"></i><p>首页</p></a></li>
           <li><a href="category.html"><i class="fa fa-bars"></i><p>分类页</p></a></li>
@@ -49,32 +65,33 @@
 </div>
 
 
+<!-- 搜索产品模板 -->
+<script type="text/html" id="list_tpl">
+{{each data v i}}
+<li >
+        <a href="product.html">
+                <img src="{{v.pic[0].picAddr}}" alt="">
+                <p class="info mui-ellipsis-2">{{ v.proName }}</p>
+                <span class="firstchild"> ￥{{v.price}}</span>
+                <span class="lastchild">￥{{ v.oldPrice }}</span>
+        
+                <br>
+                <button class="mui-btn mui-btn-primary baynow">立即购买</button>
+        
+        </a>
 
-<script type="text/html" id="search_tpl">
-{{if list.length===0}}
-<p>没有更多数据了</p>
-{{else}}
-    <div class="title">
-            <span class="mui-pull-left ">搜索历史</span>
-            <span class="mui-pull-right  btn_empty"><i class="fa fa-trash"></i>清空记录</span>
-    </div>
-    <div class="content">
-        <ul>
-             {{each list v i}}
-         <li>
-             <a class="mui-pull-left" href="#">{{v}}</a>
-             <i data-index="{{i}}" class="btn_delete mui-pull-right mui-icon mui-icon-closeempty" ></i>
-        </li>
-             {{/each}} 
-                   
-            </ul>
-    </div>
-{{/if}}
+    </li>
+{{/each}}
 </script>
+
+
+
     <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./lib/mui/js/mui.js"></script>
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/commit.js"></script>
+    <script src="./js/searchList.js"></script>
 </body>
 </html>

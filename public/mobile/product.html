@@ -102,17 +102,17 @@
   <!-- 产品尺码 -->
   <!-- 模板引擎: 原生语法, 在原生语法中可以直接编写 js 语句 -->
   <div class="lt_size item_box">
-    尺码:
-    <%
-      var arr = size.split("-");  //  ["35", "45"]
-      var start = arr[0];   // 35
-      var end = arr[1];     // 45
-
-      for ( var i = start; i <= end; i++ ) {
-    %>
-      <span>{{ i }}</span>
-    <% } %>
-  </div>
+      尺码:
+      <%
+        var arr = size.split("-");  //  ["35", "45"]
+        var start = arr[0];   // 35
+        var end = arr[1];     // 45
+  
+        for ( var i = start; i <= end; i++ ) {
+      %>
+        <span>{{ i }}</span>
+      <% } %>
+    </div>
 
 
   <!-- 产品数量 -->

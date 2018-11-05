@@ -14,25 +14,24 @@ function getHistory(){
 //1结合模板动态渲染
 function render(){
     var arr=getHistory();
-    
+
     var Str = template("search_tpl", { list: arr });
     $('.history').html( Str );
-
 }
 
 
 
 // 2点击单个删除按钮
 $('.history').on('click','.btn_delete',function(){
-   
+//  
     //获取当前i
-    var index=$(this).data('id');
+    var index=$(this).data("index");
+    console.log(index);
+    
     var arr =getHistory();
     arr.splice(index,1);
     // 在将数组转成字符串在存到本地中
     localStorage.setItem("search_list",JSON.stringify(arr))
-
-
     //页面从新渲染
     render()
 })
@@ -41,8 +40,6 @@ $('.history').on('click','.btn_delete',function(){
 
 //3点击清空按钮
 $('.history').on('click','.btn_empty',function(){
-   
-    
     mui.confirm("你确定要清空历史记录嘛?", "温馨提示", ["取消", "确认"], function( e ) {
         if ( e.index === 1 ) {
             // 确认, 进行清空
@@ -71,7 +68,6 @@ $('.search_btn').click(function(){
         return
     }
 
-
     //往数组里追加数据
     var arr=getHistory();
 // 重fux的掉到前面来
@@ -84,7 +80,6 @@ if(arr.length>=10){
     //删除最后一项
     arr.pop()
 }
-
      //往数组里追加数据
     arr.unshift(key);
     localStorage.setItem('search_list',JSON.stringify(arr));
@@ -93,8 +88,9 @@ if(arr.length>=10){
     render();
     // 清空内容
     $('.search_input').val( "" );
-     // 跳转到 searchList 搜索列表页
-    
+     // 跳转到 searchList 搜索列表页  将输入的值带进去
+location.href="searchList.html?key="+key
+
 
 })
 
